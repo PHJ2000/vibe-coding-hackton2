@@ -1,0 +1,196 @@
+:root {
+  font-family: "Pretendard", "Noto Sans KR", system-ui, sans-serif;
+  color: #0f172a;
+  background-color: #f8fafc;
+}
+
+body {
+  margin: 0;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+header {
+  background: linear-gradient(120deg, #0284c7, #38bdf8);
+  color: white;
+  padding: 2rem 3rem;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2.4rem;
+}
+
+header p {
+  margin-top: 0.5rem;
+  opacity: 0.8;
+}
+
+main {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 1.5rem;
+  padding: 2rem 3rem 3rem;
+  flex: 1;
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.sidebar h2 {
+  margin: 0 0 0.75rem;
+  font-size: 1.2rem;
+}
+
+.list,
+.recommendation-list,
+.event-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.list-item,
+.recommendation-list li,
+.event-list li {
+  background: white;
+  border-radius: 12px;
+  padding: 0.85rem 1rem;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.list-item:hover,
+.recommendation-list li:hover,
+.event-list li:hover {
+  transform: translateY(-3px);
+}
+
+.list-item.selected {
+  outline: 2px solid #0284c7;
+}
+
+.badge {
+  color: white;
+  padding: 0.2rem 0.65rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  text-transform: capitalize;
+}
+
+.detail {
+  background: white;
+  border-radius: 18px;
+  padding: 1.5rem;
+  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.detail-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.metrics {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 1rem;
+}
+
+.metric-card {
+  background: #eff6ff;
+  border-radius: 14px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.metric-label {
+  font-size: 0.85rem;
+  color: #1d4ed8;
+}
+
+.metric-value {
+  font-size: 1.4rem;
+}
+
+.metric-caption {
+  font-size: 0.75rem;
+  color: #64748b;
+}
+
+.alerts ul,
+.events-inline ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.alerts li,
+.events-inline li {
+  background: #f1f5f9;
+  border-radius: 12px;
+  padding: 0.75rem 1rem;
+}
+
+.severity.high {
+  color: #f44336;
+  font-weight: bold;
+  margin-left: 0.5rem;
+}
+
+.severity.medium {
+  color: #f59e0b;
+  margin-left: 0.5rem;
+}
+
+.severity.info,
+.severity.low {
+  color: #0284c7;
+  margin-left: 0.5rem;
+}
+
+.events {
+  margin-top: 1rem;
+}
+
+.score {
+  font-size: 0.85rem;
+  color: #0f172a;
+  opacity: 0.7;
+}
+
+@media (max-width: 960px) {
+  main {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    order: 2;
+  }
+
+  .content {
+    order: 1;
+  }
+}

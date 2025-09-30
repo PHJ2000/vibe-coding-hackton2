@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "beachhub-worker"
+version = "0.1.0"
+description = "Celery worker for BeachHub"
+authors = ["Vibe Coding Hackton Team"]
+
+[tool.poetry.dependencies]
+python = "^3.12"
+celery = "^5.3.6"
+redis = "^5.0.4"
+python-dotenv = "^1.0.1"
+
+[build-system]
+requires = ["poetry-core>=1.5.0"]
+build-backend = "poetry.core.masonry.api"
