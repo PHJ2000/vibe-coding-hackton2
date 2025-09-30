@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>해수욕장 종합 정보 - 안전하고 즐거운 바다 여행</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <div class="hero__overlay"></div>
+      <div class="hero__content">
+        <h1>부산 해수욕장 종합 정보 허브</h1>
+        <p>
+          실시간 기상과 안전 정보부터, 주변 행사와 해양 스포츠까지.<br />
+          바다를 더 안전하고 재미있게 즐길 수 있는 모든 정보를 한 번에 확인하세요!
+        </p>
+        <div class="hero__actions">
+          <input
+            type="search"
+            id="searchInput"
+            placeholder="해수욕장 이름 또는 지역으로 검색"
+            aria-label="해수욕장 검색"
+          />
+          <div class="chip-group" role="group" aria-label="안전 필터">
+            <button class="chip active" data-filter="all">전체</button>
+            <button class="chip" data-filter="safe">안전</button>
+            <button class="chip" data-filter="caution">주의</button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="layout">
+      <section class="panel" aria-label="해수욕장 목록">
+        <h2>오늘의 추천 해수욕장</h2>
+        <ul id="beachList" class="beach-list"></ul>
+        <p class="panel__hint">
+          안전 요원 배치, 해파리 출몰, 이안류 경보 등 꼭 알아야 할 안전 정보는
+          <strong>안전 인포 카드</strong>에서 확인할 수 있어요.
+        </p>
+      </section>
+
+      <section class="panel" aria-label="해수욕장 상세 정보">
+        <div id="detailView" class="detail">
+          <div class="empty-state">
+            <h3>해수욕장을 선택해 주세요</h3>
+            <p>
+              왼쪽 목록에서 해수욕장을 선택하면 실시간 기상, 안전, 행사 정보를
+              확인할 수 있습니다.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <section class="info-grid">
+      <article class="card" id="eventHighlights">
+        <h3>주요 행사 & 축제</h3>
+        <ul class="event-list"></ul>
+      </article>
+      <article class="card" id="buddyBoard">
+        <h3>같이 놀 사람 찾기</h3>
+        <ul class="buddy-list"></ul>
+      </article>
+      <article class="card" id="sportsInfo">
+        <h3>해양 스포츠 가이드</h3>
+        <ul class="sports-list"></ul>
+      </article>
+      <article class="card" id="personalTips">
+        <h3>맞춤 추천</h3>
+        <p class="personal-message">
+          즐겨찾기한 해수욕장이 아직 없어요. 마음에 드는 해수욕장을 즐겨찾기해 보세요!
+        </p>
+        <ul class="personal-list"></ul>
+      </article>
+    </section>
+
+    <footer class="footer">
+      <p>
+        데이터 출처: 부산시 해양 기상 관측소 · 해양수산부 안전해 서비스 · 지역 관광 정보
+      </p>
+      <p>© 2024 부산 해수욕장 파트너스</p>
+    </footer>
+
+    <script type="module" src="scripts/app.js"></script>
+  </body>
+</html>
